@@ -124,6 +124,62 @@ body {
     color: #000000;
 }
 
+/* Dollar */
+.navbar .dollar-cart {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    color: #000000;
+    background-color: #ffffff;
+    transition: 0.3s;
+
+}
+
+.navbar .dollar-cart.active {
+    right: 0;
+
+}
+
+.navbar .dollar-cart .cart-item { 
+    margin: 2rem 0;
+    display: flex;
+    align-items: top;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #000000;
+    position: relative;
+}
+
+.navbar .dollar-cart img {
+    max-height: 5rem;
+
+}
+
+.navbar .dollar-cart h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.navbar .dollar-cart .item-price {
+    font-size: 1rem;
+    position: absolute;
+    margin-top: -1rem;
+
+}
+
+.navbar .dollar-cart .delete-item {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+.navbar .dollar-cart .delete-item:hover {
+    color:var(--primary); 
+}
+
 
 
 
@@ -251,24 +307,24 @@ body {
 }
  
 /* Menu Section */
-.menu {
+.menu, .donasi {
     padding : 8rem 7% 1.4rem;
 }
 
-.menu h2 {
+.menu h2, .donasi h2 {
     font-size: 2.4rem;
     margin-bottom: 0.1rem;
     text-align: center;
     color: white;
 }
 
-.menu h2 span { 
+.menu h2 span, .donasi h2 span { 
     color: #ff0000;
 }
 
-.menu p { 
+.menu p, .donasi p { 
     text-align: center;
-    max-width: 40rem;
+    max-width: 100rem;
     margin: auto;
     font-weight: 100;
     line-height: 1.6rem;
@@ -307,6 +363,92 @@ body {
     color: whitesmoke;
 }
 
+/* Donasi Section */
+
+.donasi .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+
+}
+.donasi .donasi-card {
+    text-align: center;
+    border: 1px solid #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+
+
+}
+
+.donasi .donasi-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.donasi .donasi-icons a {
+    width: 3rem;
+    height: 3rem;
+    color: #ffffff;
+    margin: 0.3rem;
+    border: 1px solid #ffffff;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.donasi .donasi-icons a:hover {
+    background-color: #ff5100d0;
+    border: 1px solid #ffffff;
+
+
+}
+.donasi .donasi-image {
+    max-height:20rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+.donasi .donasi-image img {
+
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+    
+
+}
+
+.donasi .donasi-content h3 {
+    font-size: 2rem;
+    color: #ffffff;
+
+}
+.donasi .donasi-stars { 
+    font-size: 1.7rem;
+    padding: 0.2rem;
+    color: white;
+}
+
+.donasi .donasi-stars .star {
+    fill: rgb(255, 243, 12);
+}
+
+.donasi .donasi-price {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+}
+
+.donasi .donasi-price span {
+    font-size: 1rem;
+    font-weight: 100;
+    text-decoration: line-through;
+    
+}
+
 /* Contact */
 .contact {
     padding : 8rem 7% 1.4rem;
@@ -325,7 +467,7 @@ body {
 
 .contact p { 
     text-align: center;
-    max-width: 40rem;
+    max-width: 100rem;
     margin: auto;
     font-weight: 100;
     line-height: 1.6rem;
@@ -427,6 +569,94 @@ footer .credit a {
 
 /* Footer End*/
 
+/* Modal Box */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+}
+
+.modal-container {
+    position: relative;
+    background-color: #323232;
+    color: #ffffff;
+    margin: 15% auto;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    width: 80%;
+    animation: animateModal 0.5s ;
+
+
+}
+
+@keyframes animateModal {
+    from {
+        top: -300px;
+        opacity: 0;
+
+    }
+    to {
+        top: 0;
+        opacity: 1;
+
+    }
+}
+
+.modal-container .close-icon {
+    position: absolute;
+    right: 1rem;
+    color: #fff;
+
+}
+
+.modal-content { 
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-content img {
+    max-height: 20rem ;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    line-height: 1.8rem;
+}
+.modal-content h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+}
+.modal-content h3 span {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #656565;
+}
+
+.modal-content a {
+    display: flex;
+    gap: 1rem;
+    width: 14rem;
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    
+}
+/* Modal Box End */
+
 
 
 /* Media Quaries */
@@ -504,6 +734,19 @@ footer .credit a {
     }
     .contact .row form {
         padding-top: 0;
+    }
+    .navbar .search-form {
+        width: 90%;
+        right: 2rem;
+
+    }
+
+    .donasi .donasi-image {
+    height: 20rem;
+    margin-top: 1rem;
+    }
+    .modal-content{
+        flex-wrap: wrap;
     }
 }
 /* Mobile Phone */

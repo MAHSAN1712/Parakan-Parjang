@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parakan Parjang</title>
     <!-- My Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <!-- Feather Icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- My Style -->
@@ -16,187 +19,335 @@
   <body>
     <!-- Navbar Start -->
     <nav class="navbar">
-        <a href="#" class="navbar-logo"><span>PARJANG</span>ALLBASE</a>
-        <div class="navbar-nav">
-            <a href="#home">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#bukan">Profil</a>
-            <a href="#contact">Kontak</a>
+      <a href="#" class="navbar-logo"><span>PARJANG</span>ALLBASE</a>
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#bukan">Profil</a>
+        <a href="#donasi">Donasi</a>
+        <a href="#contact">Kontak</a>
+      </div>
 
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shop"><i data-feather="dollar-sign"></i></a>
 
+        <a href="#" id="menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search Form Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+
+      <!-- Search Form End -->
+
+      <!-- Shooping Cart -->
+
+      <div class="dollar-cart">
+        <div class="cart-item">
+          <img src="Silver.jpg" alt="Product 1" />
+          <div class="item-detail">
+            <h3>Donasi <span>Silver</span></h3>
+            <div class="item-price">10K</div>
+          </div>
+          <i data-feather="trash-2" class="delete-item"></i>
         </div>
+      </div>
 
-        <div class="navbar-extra">
-             <a href="#" id="search"><i data-feather="search"></i></a>
-            <a href="#" id="menu"><i data-feather="menu"></i></a>
-
-        </div>
-
-        <!-- Search Form Start -->
-         <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box"><i data-feather="search"></i></label>
-
-         </div>
-
-
-
-        <!-- Search Form End -->
-
-           
-
-    </nav> 
+      <!-- Shooping Cart End-->
+    </nav>
     <!-- Navbar End -->
 
     <!-- Hero Section -->
-     <section class="hero" id="home">
-        <main class="content">
-            <h1> PARAKAN <span> PANJANG </span></h1>
-            <p>Kumpulan orang orang berkualitas dengan gaya sederhana</p>
-        </main>
-
-        
-     </section>
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>PARAKAN <span> PANJANG </span></h1>
+        <p>Kumpulan orang orang berkualitas dengan gaya sederhana</p>
+      </main>
+    </section>
 
     <!-- Hero Section End -->
 
     <!-- About Section -->
-     <section class="about" id="about">
-        <h2>
-            Tentang <span> Kami </span>
-        </h2>
+    <section class="about" id="about">
+      <h2>Tentang <span> Kami </span></h2>
 
-        <div class="row">
-
-           <div class="about-img">
-            <img src="Foto2.jpg" alt="Tentang Kami">
-            
-           </div>
-           <div class="content">
-            <h1>Kami Adalah</h1>
-            <p>Allbase Parjang adalah tim profesional yang terdiri dari 6 individu berpengalaman dengan keahlian yang saling melengkapi. Kami hadir dengan komitmen tinggi untuk menciptakan ruang yang tidak hanya berfungsi dengan baik, tetapi juga mampu menghadirkan kenyamanan, keindahan, dan kesan yang istimewa di setiap detailnya. Dengan menggabungkan pengalaman lapangan, kreativitas, dan standar kerja yang profesional, kami selalu mengedepankan kualitas dalam setiap proses perencanaan hingga pengerjaan. Bagi kami, setiap proyek adalah bentuk tanggung jawab dan kepercayaan yang harus dijaga dengan hasil terbaik. Kepuasan klien menjadi prioritas utama kami, sehingga kami selalu terbuka terhadap evaluasi dan terus melakukan peningkatan demi menghasilkan karya yang bernilai dan berkelanjutan.</p>
-           </div>
-
+      <div class="row">
+        <div class="about-img">
+          <img src="Foto2.jpg" alt="Tentang Kami" />
         </div>
-     </section>
+        <div class="content">
+          <h1>Kami Adalah</h1>
+          <p>
+            Allbase Parjang adalah tim profesional yang terdiri dari 6 individu
+            berpengalaman dengan keahlian yang saling melengkapi. Kami hadir
+            dengan komitmen tinggi untuk menciptakan ruang yang tidak hanya
+            berfungsi dengan baik, tetapi juga mampu menghadirkan kenyamanan,
+            keindahan, dan kesan yang istimewa di setiap detailnya. Dengan
+            menggabungkan pengalaman lapangan, kreativitas, dan standar kerja
+            yang profesional, kami selalu mengedepankan kualitas dalam setiap
+            proses perencanaan hingga pengerjaan. Bagi kami, setiap proyek
+            adalah bentuk tanggung jawab dan kepercayaan yang harus dijaga
+            dengan hasil terbaik. Kepuasan klien menjadi prioritas utama kami,
+            sehingga kami selalu terbuka terhadap evaluasi dan terus melakukan
+            peningkatan demi menghasilkan karya yang bernilai dan berkelanjutan.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- About Section End-->
 
     <!-- Menu Section -->
     <section class="menu" id="bukan">
-        <h2>
-            Profil <span> Kami </span>
-        </h2>
+      <h2>Profil <span> Kami </span></h2>
 
-
-        <div class="row">
-            <div class="profil-card">
-                <img src="Profil1.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Tegar Ramadhan Poluan</h3>
-                <p class="profil-card-nim">12123088</p>
-            </div>
-            <div class="profil-card">
-                <img src="Profil2.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Muhammad Fauzan Kamil</h3>
-                <p class="profil-card-nim">12123020</p>
-            </div>
-            <div class="profil-card">
-                <img src="Profil3.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Muhammad Ahsan</h3>
-                <p class="profil-card-nim">12323027</p>
-            </div>
-            <div class="profil-card">
-                <img src="Profil4.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Nabil Safaraz</h3>
-                <p class="profil-card-nim">12323043</p>
-            </div>
-            <div class="profil-card">
-                <img src="Profil5.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Muhammad Aufar Farizan</h3>
-                <p class="profil-card-nim">12323005</p>
-            </div>
-            <div class="profil-card">
-                <img src="Profil6.jpg" alt="Tegar">
-                <h3 class="profil-card-nama">Calvin Pratama Gunawan</h3>
-                <p class="profil-card-nim">12323035</p>
-            </div>
+      <div class="row">
+        <div class="profil-card">
+          <img src="Profil1.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Tegar Ramadhan Poluan</h3>
+          <p class="profil-card-nim">12123088</p>
         </div>
-        
+        <div class="profil-card">
+          <img src="Profil2.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Muhammad Fauzan Kamil</h3>
+          <p class="profil-card-nim">12123020</p>
+        </div>
+        <div class="profil-card">
+          <img src="Profil3.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Muhammad Ahsan</h3>
+          <p class="profil-card-nim">12323027</p>
+        </div>
+        <div class="profil-card">
+          <img src="Profil4.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Nabil Safaraz</h3>
+          <p class="profil-card-nim">12323043</p>
+        </div>
+        <div class="profil-card">
+          <img src="Profil5.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Muhammad Aufar Farizan</h3>
+          <p class="profil-card-nim">12323005</p>
+        </div>
+        <div class="profil-card">
+          <img src="Profil6.jpg" alt="Tegar" />
+          <h3 class="profil-card-nama">Calvin Pratama Gunawan</h3>
+          <p class="profil-card-nim">12323035</p>
+        </div>
+      </div>
     </section>
 
     <!-- Menu Sectoin End -->
 
+    <!-- Produk Section -->
+    <section class="donasi" id="donasi">
+      <h2>Donasi <span>Kami</span></h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui fugit illo
+        repudiandae adipisci impedit maxime, nostrum incidunt vel suscipit
+        reiciendis dolore aliquam officia nam laborum repellendus voluptate
+        similique quaerat expedita!
+      </p>
+
+      <div class="row">
+        <div class="donasi-card">
+          <div class="donasi-icons">
+            <a href="#"><i data-feather="dollar-sign"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="donasi-image">
+            <img src="Silver.jpg" alt="Product 1" />
+          </div>
+          <div class="donasi-content">
+            <h3>Donasi Silver</h3>
+            <div class="donasi-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
+          </div>
+        </div>
+        <div class="donasi-card">
+          <div class="donasi-icons">
+            <a href="#"><i data-feather="dollar-sign"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="donasi-image">
+            <img src="Silver.jpg" alt="Product 1" />
+          </div>
+          <div class="donasi-content">
+            <h3>Donasi Silver</h3>
+            <div class="donasi-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
+          </div>
+        </div>
+        <div class="donasi-card">
+          <div class="donasi-icons">
+            <a href="#"><i data-feather="dollar-sign"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="donasi-image">
+            <img src="Silver.jpg" alt="Product 1" />
+          </div>
+          <div class="donasi-content">
+            <h3>Donasi Silver</h3>
+            <div class="donasi-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
+          </div>
+        </div>
+        <div class="donasi-card">
+          <div class="donasi-icons">
+            <a href="#"><i data-feather="dollar-sign"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="donasi-image">
+            <img src="Silver.jpg" alt="Product 1" />
+          </div>
+          <div class="donasi-content">
+            <h3>Donasi Silver</h3>
+            <div class="donasi-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk Section End -->
+
     <!-- Contact Section -->
 
     <section id="contact" class="contact">
-         <h2>
-            Kontak <span> Kami </span>
-        </h2>
-        <p>Apabila Anda memiliki pertanyaan, masukan, atau ingin melakukan evaluasi terhadap layanan kami, jangan ragu untuk menghubungi tim Allbase Parjang. Kami selalu terbuka terhadap setiap saran dan siap memberikan respon terbaik demi meningkatkan kualitas pelayanan serta hasil yang maksimal sesuai kebutuhan Anda.</p>
+      <h2>Kontak <span> Kami </span></h2>
+      <p>
+        Apabila Anda memiliki pertanyaan, masukan, atau ingin melakukan evaluasi
+        terhadap layanan kami, jangan ragu untuk menghubungi tim Allbase
+        Parjang. Kami selalu terbuka terhadap setiap saran dan siap memberikan
+        respon terbaik demi meningkatkan kualitas pelayanan serta hasil yang
+        maksimal sesuai kebutuhan Anda.
+      </p>
 
-        <div class="row">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.639248780414!2d107.63328132530657!3d-6.883627966050008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e708644e6c79%3A0xee2a8adeee1847fe!2sAbiq%20Pempek%20Palembang!5e1!3m2!1sen!2sid!4v1766505872480!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.639248780414!2d107.63328132530657!3d-6.883627966050008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e708644e6c79%3A0xee2a8adeee1847fe!2sAbiq%20Pempek%20Palembang!5e1!3m2!1sen!2sid!4v1766505872480!5m2!1sen!2sid"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
 
-            <form action="https://formspree.io/f/xbdrwkzr" method="POST">
-                <div class="input-group">
-                    <i data-feather="user"></i>
-                    <input type="text" name="nama" placeholder="nama">
-            
+        <form action="https://formspree.io/f/xbdrwkzr" method="POST">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" name="nama" placeholder="nama" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" name="email" placeholder="email" />
+          </div>
 
-                </div>
-                <div class="input-group">
-                    <i data-feather="mail"></i>
-                    <input type="text" name="email" placeholder="email">
-            
-
-                </div>
-
-                <div class="input-group">
-                    <i data-feather="type"></i>
-                    <input type="text" name="Evaluasi" placeholder="Evaluasi">
-            
-
-                </div>
-                <button type="submit" class="btn">kirim pesan</button>
-            </form>
-
-
-        </div>
+          <div class="input-group">
+            <i data-feather="type"></i>
+            <input type="text" name="Evaluasi" placeholder="Evaluasi" />
+          </div>
+          <button type="submit" class="btn">kirim pesan</button>
+        </form>
+      </div>
     </section>
-
-
 
     <!-- Contact Section End -->
 
     <!-- Footer -->
-     <footer>
-        <div class="social">
-            <a href="#">
-                <i data-feather="instagram"></i>
-            </a>
-            <a href="#">
-                <i data-feather="twitter"></i>
-            </a>
-        </div>
+    <footer>
+      <div class="social">
+        <a
+          href="https://www.instagram.com/parjangboyz?igsh=MTh3a3E5c3Q4bmJ0eQ%3D%3D&utm_source=qr"
+        >
+          <i data-feather="instagram"></i>
+        </a>
+        <a href="#">
+          <i data-feather="twitter"></i>
+        </a>
+      </div>
 
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#bukan">Profil</a>
-            <a href="#contact">Kontak</a>
-
-        </div>
-        <div class="credit">
-            <p>Created by <a href="">MuhammadAhsan</a>. | &copy; 2025.</p>
-        </div>
-     </footer>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#bukan">Profil</a>
+        <a href="#contact">Kontak</a>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="#">MuhammadAhsan</a>. | &copy; 2025.</p>
+      </div>
+    </footer>
     <!-- Footer End -->
 
+    <!-- Modal Box Item -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="Silver.jpg" alt="Produk1" />
+          <div class="product-content">
+            <h3>Donasi<span> Silver</span></h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              animi, accusantium a quam eligendi aliquid enim labore recusandae
+              delectus voluptatibus beatae iusto molestias. Explicabo, fugit.
+            </p>
+            <div class="donasi-stars">
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+              <i data-feather="star" class="star"></i>
+            </div>
+            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
+            <a href="#"
+              ><i data-feather="dollar-sign"></i><span>add to donation</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Box Item End-->
+
     <!-- Feather Icon -->
-     <script>
+    <script>
       feather.replace();
     </script>
     <!-- My Java Script -->
-     <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
