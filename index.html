@@ -15,10 +15,19 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- My Style -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Alpine Js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- App -->
+    <script src="src/app.js"></script>
   </head>
+
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo"><span>PARJANG</span>ALLBASE</a>
       <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -30,7 +39,10 @@
 
       <div class="navbar-extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
-        <a href="#" id="shop"><i data-feather="dollar-sign"></i></a>
+        <a href="javascript:void(0)" id="shop">
+            <i data-feather="dollar-sign"></i>
+            <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </a>
 
         <a href="#" id="menu"><i data-feather="menu"></i></a>
       </div>
@@ -46,15 +58,46 @@
       <!-- Shooping Cart -->
 
       <div class="dollar-cart">
+        <template x-for="(item,index) in $store.cart.items" x-keys="index">
         <div class="cart-item">
-          <img src="Silver.jpg" alt="Product 1" />
+          <img :src="`img/${item.img}`" :alt="item.name">
           <div class="item-detail">
-            <h3>Donasi <span>Silver</span></h3>
-            <div class="item-price">10K</div>
+            <h3 x-text="item.name"></h3>
+            <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times; 
+                <button id="delete"@click = "$store.cart.remove(item.id)">&minus;</button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click = "$store.cart.add(item)">&plus;</button>&equals;
+                <span x-text="rupiah(item.total)"></span>
+            </div>
           </div>
-          <i data-feather="trash-2" class="delete-item"></i>
+          <!-- <i data-feather="trash-2" class="delete-item"></i> -->
         </div>
-      </div>
+        </template>
+        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">cart is empty</h4>
+        <h4 x-show="$store.cart.items.length" class="total">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
+        
+        <div class="form-container" x-show="$store.cart.items.length">
+            <form action="" id="checkoutform">
+                <h5>Customer Detail</h5>
+                <label for="name">
+                    <span>Name</span>
+                    <input type="text" name="name" id="name">
+                </label>
+                <label for="phone">
+                    <span>Nomor Telepon</span>
+                    <input type="number" name="phone" id="phone" autocomplete="off">
+                </label>
+                <label for="bukti">
+                    <span>Bukti Transaksi</span>
+                    <input type="file" name="" id="">
+                </label>
+                <h5>Nomor Rekening :</h5>
+
+                <button class="checkoutbutton" type="submit" id="checkoutbutton">Checkout</button>
+            </form>
+        </div>
+    </div>
 
       <!-- Shooping Cart End-->
     </nav>
@@ -81,18 +124,15 @@
         <div class="content">
           <h1>Kami Adalah</h1>
           <p>
-            Allbase Parjang adalah tim profesional yang terdiri dari 6 individu
-            berpengalaman dengan keahlian yang saling melengkapi. Kami hadir
-            dengan komitmen tinggi untuk menciptakan ruang yang tidak hanya
-            berfungsi dengan baik, tetapi juga mampu menghadirkan kenyamanan,
-            keindahan, dan kesan yang istimewa di setiap detailnya. Dengan
-            menggabungkan pengalaman lapangan, kreativitas, dan standar kerja
-            yang profesional, kami selalu mengedepankan kualitas dalam setiap
-            proses perencanaan hingga pengerjaan. Bagi kami, setiap proyek
-            adalah bentuk tanggung jawab dan kepercayaan yang harus dijaga
-            dengan hasil terbaik. Kepuasan klien menjadi prioritas utama kami,
-            sehingga kami selalu terbuka terhadap evaluasi dan terus melakukan
-            peningkatan demi menghasilkan karya yang bernilai dan berkelanjutan.
+            Kami di ParjangAllbase sebenarnya hanyalah sekelompok mahasiswa yang kebetulan punya minat yang sama: suka ngobrolin ruang, desain, dan hal-hal yang berhubungan dengan bagaimana suatu tempat bisa terasa nyaman buat orang yang menggunakannya. Kami berkumpul bukan karena punya tujuan jadi perusahaan besar, tapi lebih karena ingin punya wadah untuk belajar bareng, saling tukar ide, dan mencoba pelan-pelan menerapkan apa yang kami pelajari di kampus ke kehidupan nyata.
+
+Awalnya, ParjangAllbase lahir dari obrolan santai. Dari situ kami sadar, ternyata seru juga kalau hal-hal yang biasanya cuma jadi tugas kuliah bisa dicoba diterapkan dalam bentuk proyek kecil. Kadang kami mulai dari hal sederhana: diskusi konsep, lihat referensi, atau sekadar membayangkan seperti apa suatu ruang kalau diatur ulang. Dari situ, sedikit demi sedikit kami belajar bahwa setiap detail meski terlihat kecil ternyata berpengaruh.
+
+Karena masih mahasiswa, kami juga masih sering salah, masih bingung, bahkan kadang harus mengulang dari awal. Tapi justru di situ proses belajarnya. Kami belajar bagaimana bekerja dalam tim, belajar mendengar pendapat teman, menerima kritik, dan mencoba memperbaiki diri. Buat kami, ParjangAllbase bukan tempat untuk “pamer kemampuan”, tapi lebih ke tempat tumbuh bersama.
+
+Setiap kesempatan yang datang, kami anggap sebagai pengalaman, bukan sebagai proyek komersial besar. Kami berusaha mengerjakan semuanya dengan santai tapi tetap bertanggung jawab. Kalau ada masukan, kami terbuka karena kami tahu kemampuan kami masih berkembang dan masih banyak yang perlu dipelajari.
+
+Pada akhirnya, ParjangAllbase hanyalah kami: mahasiswa biasa yang masih mencari arah, masih banyak belajar, tapi punya niat untuk mencoba, bereksperimen, dan menghasilkan sesuatu yang sederhana tapi berarti. Kami ingin memperkenalkan diri apa adanya tanpa label perusahaan, tanpa kesan terlalu formal hanya sebagai tim kecil yang berjalan pelan, tapi ingin terus berkembang.
           </p>
         </div>
       </div>
@@ -106,31 +146,61 @@
 
       <div class="row">
         <div class="profil-card">
+        <a href=" https://www.instagram.com/tegarmadan?igsh=MWZzd2FwZ3J1dHV0YQ=="
+        >
+          <i data-feather="instagram"></i>
+          <span>@tegarmadan</span>
+        </a>
           <img src="Profil1.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Tegar Ramadhan Poluan</h3>
           <p class="profil-card-nim">12123088</p>
         </div>
         <div class="profil-card">
+            <a href="https://www.instagram.com/fzn_kamil?igsh=MWU1dXBrOXh2dHY2bA=="
+        >
+          <i data-feather="instagram"></i>
+          <span>@fzn_kamil</span>
+        </a>
           <img src="Profil2.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Muhammad Fauzan Kamil</h3>
-          <p class="profil-card-nim">12123020</p>
+          <p class="profil-card-nim">12123020 </p>
+          
         </div>
         <div class="profil-card">
+        <a href="https://www.instagram.com/mhddahsann?igsh=a3Z0em5nczhvN2Fx"
+        > <i data-feather="instagram">
+        </i>
+        <span>@mhddahsann</span>
+    
+    </a>
           <img src="Profil3.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Muhammad Ahsan</h3>
           <p class="profil-card-nim">12323027</p>
         </div>
         <div class="profil-card">
+            <a href=" https://www.instagram.com/nabilsafarazz?igsh=MXV1amdzd3piM2JuaA=="
+        >
+          <i data-feather="instagram"></i>
+          <span>@nabilsafarazz</span>
+        </a>
           <img src="Profil4.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Nabil Safaraz</h3>
           <p class="profil-card-nim">12323043</p>
         </div>
         <div class="profil-card">
+            <a href=" https://www.instagram.com/aufarfarizann?igsh=MXd5bW53YngyYWdh"
+        >
+          <i data-feather="instagram"></i>
+          <span>@aufarfarizann</span>
+        </a>
           <img src="Profil5.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Muhammad Aufar Farizan</h3>
           <p class="profil-card-nim">12323005</p>
         </div>
         <div class="profil-card">
+            <a href="https://www.instagram.com/calvin.pratamaaaa?igsh=b2Q4a2w5djI2cWxm"
+        ><i data-feather="instagram"></i>
+    <span>@calvin.pratamaaaa</span> </a>
           <img src="Profil6.jpg" alt="Tegar" />
           <h3 class="profil-card-nama">Calvin Pratama Gunawan</h3>
           <p class="profil-card-nim">12323035</p>
@@ -141,104 +211,50 @@
     <!-- Menu Sectoin End -->
 
     <!-- Produk Section -->
-    <section class="donasi" id="donasi">
+    <section class="donasi" id="donasi" x-data="donasi">
       <h2>Donasi <span>Kami</span></h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui fugit illo
-        repudiandae adipisci impedit maxime, nostrum incidunt vel suscipit
-        reiciendis dolore aliquam officia nam laborum repellendus voluptate
-        similique quaerat expedita!
+        yang mau mau aza
       </p>
 
       <div class="row">
-        <div class="donasi-card">
-          <div class="donasi-icons">
-            <a href="#"><i data-feather="dollar-sign"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="donasi-image">
-            <img src="Silver.jpg" alt="Product 1" />
-          </div>
-          <div class="donasi-content">
-            <h3>Donasi Silver</h3>
-            <div class="donasi-stars">
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
+        <template x-for ="(item, index) in items" x-key="index">
+          <div class="donasi-card">
+            <div class="donasi-icons">
+              <a href="#" @click.prevent="$store.cart.add(item)">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#dollar-sign"/>
+                </svg>
+              </a>
+
+            </a>
             </div>
-            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
-          </div>
-        </div>
-        <div class="donasi-card">
-          <div class="donasi-icons">
-            <a href="#"><i data-feather="dollar-sign"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="donasi-image">
-            <img src="Silver.jpg" alt="Product 1" />
-          </div>
-          <div class="donasi-content">
-            <h3>Donasi Silver</h3>
-            <div class="donasi-stars">
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
+            <div class="donasi-image">
+              <img :src="`img/${item.img}`" :alt="item.name">
             </div>
-            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
-          </div>
-        </div>
-        <div class="donasi-card">
-          <div class="donasi-icons">
-            <a href="#"><i data-feather="dollar-sign"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="donasi-image">
-            <img src="Silver.jpg" alt="Product 1" />
-          </div>
-          <div class="donasi-content">
-            <h3>Donasi Silver</h3>
-            <div class="donasi-stars">
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
+            <div class="donasi-content">
+              <h3 x-text="item.name"></h3>
+              <div class="donasi-stars">
+                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#star"/>
+                </svg>
+                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#star"/>
+                </svg>
+                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#star"/>
+                </svg>
+                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#star"/>
+                </svg>
+                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#star"/>
+                </svg>
+              </div>
+              <div class="donasi-price"><span x-text="rupiah(item.price)"></span></div>
             </div>
-            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
           </div>
-        </div>
-        <div class="donasi-card">
-          <div class="donasi-icons">
-            <a href="#"><i data-feather="dollar-sign"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="donasi-image">
-            <img src="Silver.jpg" alt="Product 1" />
-          </div>
-          <div class="donasi-content">
-            <h3>Donasi Silver</h3>
-            <div class="donasi-stars">
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-              <i data-feather="star" class="star"></i>
-            </div>
-            <div class="donasi-price">IDR 10K <span>IDR15K</span></div>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
 
@@ -270,10 +286,6 @@
           <div class="input-group">
             <i data-feather="user"></i>
             <input type="text" name="nama" placeholder="nama" />
-          </div>
-          <div class="input-group">
-            <i data-feather="mail"></i>
-            <input type="text" name="email" placeholder="email" />
           </div>
 
           <div class="input-group">
@@ -317,7 +329,7 @@
       <div class="modal-container">
         <a href="#" class="close-icon"><i data-feather="x"></i></a>
         <div class="modal-content">
-          <img src="Silver.jpg" alt="Produk1" />
+          <img src="img/Silver.jpg" alt="Produk1" />
           <div class="product-content">
             <h3>Donasi<span> Silver</span></h3>
             <p>

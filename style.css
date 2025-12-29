@@ -125,6 +125,22 @@ body {
 }
 
 /* Dollar */
+#shop {
+    position: relative;
+}
+
+#shop .quantity-badge {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 6px;
+    background-color: #ff0000;
+    font-size: 0.5rem;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+}
+
 .navbar .dollar-cart {
     position: absolute;
     top: 100%;
@@ -154,7 +170,9 @@ body {
 }
 
 .navbar .dollar-cart img {
-    max-height: 5rem;
+    max-height: 4rem;
+    border-radius: 0.5rem;
+    width: 20%;
 
 }
 
@@ -171,14 +189,91 @@ body {
 
 }
 
-.navbar .dollar-cart .delete-item {
+.dollar-cart .cart-item #add, .dollar-cart .cart-item #delete {
+    display: inline-block;
+    padding: 2px 5px;
+    cursor: pointer ;
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50%;
+}
+
+.dollar-cart h4 {
+    font-size: 1.4rem;
+    margin-top: -1rem;
+    text-align: center;
+}
+
+/* .navbar .dollar-cart .delete-item {
     position: absolute;
     right: 1rem;
     cursor: pointer;
 }
 .navbar .dollar-cart .delete-item:hover {
     color:var(--primary); 
+} */
+
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color:aliceblue;
+    border-radius: 4rem;
+
 }
+
+.form-container h5 {
+    text-align: center;
+    color: #ff0000;
+    font-size: 1rem;
+}
+
+.form-container form {
+    width: 100%;
+    text-align: center;
+
+}
+
+.form-container label {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 1rem 0;
+
+}
+
+.form-container span {
+    text-align: center;
+
+}
+
+.form-container input {
+    background-color: #fff;
+    padding: 5px;
+    font-size: 1rem;
+    width: 60%;
+}
+
+
+.form-container .checkoutbutton {
+   padding: 6px 14px;
+   background-color: #ff6600;
+   color: aliceblue;
+   font-weight: bold;
+   font-size: 1rem;
+   border-radius: 20px;
+   margin: 1rem auto;
+   cursor: pointer;
+}
+
+
 
 
 
@@ -194,9 +289,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    mask-image: linear-gradient(rgba(0,0,0,1) 50%,rgba(0,0,0,0))  ;
 }
+/* mask image kebalikan */
 
-.hero::after {
+/* .hero::after {
     content: '';
     display: block;
     position: absolute;
@@ -205,13 +302,15 @@ body {
     bottom: 0;
     background: linear-gradient(0deg, rgba(1,1,3,1) 8%, rgba(255,255,255,0) 50%);
 
-}
+} */
 
 .hero .content {
     padding: 1.4rem;
-    max-width: 100rem;
+    /* max-width: 100rem; */
     width: 100%;
-    justify-items: center;
+    text-align: center;
+    top: 150px;
+    position: fixed;
 }
 
 .hero .content h1 {
@@ -277,7 +376,7 @@ body {
     max-height: 500px;
     object-fit: cover;
     object-position: center;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     
 
 }
@@ -337,7 +436,31 @@ body {
     margin-top: 2rem;
     justify-content: center;
     gap: 5rem;
+    
 }
+
+.menu .row .profil-card a {
+    color: #fff;
+     display:flex;
+    align-items:center;
+    gap:6px;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+}
+
+
+.menu .row .profil-card span {
+    color: #ff6600;
+    font-size: 1.4rem;
+
+
+    
+
+    
+}
+
+
 
 .menu .row .profil-card img {
     width: 200px;
@@ -407,7 +530,7 @@ body {
 .donasi .donasi-image {
     max-height:20rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     
 }
 .donasi .donasi-image img {
@@ -429,7 +552,7 @@ body {
 .donasi .donasi-stars { 
     font-size: 1.7rem;
     padding: 0.2rem;
-    color: white;
+    color: rgb(255, 243, 12);
 }
 
 .donasi .donasi-stars .star {
@@ -442,12 +565,12 @@ body {
     color: white;
 }
 
-.donasi .donasi-price span {
+/* .donasi .donasi-price span {
     font-size: 1rem;
     font-weight: 100;
     text-decoration: line-through;
     
-}
+} */
 
 /* Contact */
 .contact {
@@ -706,6 +829,21 @@ footer .credit a {
         transform: scaleX(0.1);
     }
 
+    .hero .content {
+        text-align: center;
+        justify-content: center;
+    }
+    .hero .content h1 {
+        text-align: center;
+        justify-content: center;
+        font-weight: bolder;
+    }
+
+    .hero .content p {
+        text-align: center;
+        max-width: 50rem;
+    }
+
     .about .row {
         flex-wrap: wrap;
     }
@@ -754,4 +892,5 @@ footer .credit a {
     html {
         font-size: 55%;
     }
+
 }
